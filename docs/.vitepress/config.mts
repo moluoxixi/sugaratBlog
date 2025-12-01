@@ -59,6 +59,8 @@ export default defineConfig({
   lang: 'zh-cn',
   title: 'moluoxixi Blog',
   description: 'moluoxixi 的博客，基于 vitepress 实现',
+  // 忽略死链接检查
+  ignoreDeadLinks: true,
   // 排除不需要构建的文件
   srcExclude: [
     '**/*.excalidraw.*',
