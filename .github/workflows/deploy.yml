@@ -49,12 +49,17 @@ jobs:
           fetch-depth: 0
           # 先不拉取子模块，稍后手动处理
           submodules: false
-          token: ${{ secrets.PAT }}
       
       # 配置 Git 以使用 PAT 访问私有子模块
       - name: Setup Git for submodules
+        env:
+          PAT: ${{ secrets.PAT }}
         run: |
-          git config --global url."https://${{ secrets.PAT }}@github.com/".insteadOf "https://github.com/"
+          if [ -z "$PAT" ]; then
+            echo "::error::PAT secret is not configured. Please add PAT to repository secrets."
+            exit 1
+          fi
+          git config --global url."https://$PAT@github.com/".insteadOf "https://github.com/"
       
       # 手动初始化和更新子模块
       - name: Update submodules
