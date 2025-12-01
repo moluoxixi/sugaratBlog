@@ -41,31 +41,16 @@ jobs:
         node-version: [20]
 
     steps:
-      # 拉取代码（先不拉取子模块）
+      # 拉取代码
       - name: Checkout
         uses: actions/checkout@v4
         with:
           # 保留 Git 信息
           fetch-depth: 0
-          # 先不拉取子模块，稍后手动处理
-          submodules: false
-      
-      # 配置 Git 以使用 PAT 访问私有子模块
-      - name: Setup Git for submodules
-        env:
-          PAT: ${{ secrets.PAT }}
-        run: |
-          if [ -z "$PAT" ]; then
-            echo "::error::PAT secret is not configured. Please add PAT to repository secrets."
-            exit 1
-          fi
-          git config --global url."https://$PAT@github.com/".insteadOf "https://github.com/"
-      
-      # 手动初始化和更新子模块
-      - name: Update submodules
-        run: |
-          git submodule sync
-          git submodule update --init --recursive
+          # 开启子模块
+          submodules: true
+          # 如果子模块是私有仓库，需要配置 token
+          token: ${{ secrets.PAT }}
 
       # 设置使用 Node.js 版本
       - name: Use Node.js ${{ matrix.node-version }}
