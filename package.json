@@ -1,0 +1,35 @@
+{
+  "name": "vitepress-blog",
+  "version": "1.0.0",
+  "private": true,
+  "author": "moluoxixi",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "catalog:build",
+    "@sugarat/theme": "catalog:build",
+    "element-plus": "catalog:build",
+    "vue": "catalog:build"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {
+    "pagefind": "catalog:build",
+    "sass": "catalog:build",
+    "typescript": "catalog:type",
+    "vitepress": "catalog:build"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "search-insights"
+      ]
+    }
+  }
+}

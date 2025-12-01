@@ -1,0 +1,3 @@
+[submodule "docs/note"]
+	path = docs/note
+	url = https://github.com/moluoxixi/note.git
