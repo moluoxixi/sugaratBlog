@@ -69,9 +69,10 @@ jobs:
 
         # 安装依赖
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --no-frozen-lockfile --ignore-scripts
         # 锁定依赖版本
         # run: pnpm install --frozen-lockfile
+        # 使用 --ignore-scripts 跳过 prepare 脚本，避免 husky 错误
 
         # 构建项目
       - name: Build blog project
