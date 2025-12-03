@@ -67,3 +67,38 @@ export default defineConfig({
 ④ 推送 `main` 分支即可
 
 需要进一步修改部署和构建配置，详见`deploy.yml` 文件。
+
+## 子模块同步
+
+本项目使用 Git 子模块来管理 `docs/note` 目录。提供了自动化脚本来同步子模块并推送。
+
+### 快速使用
+
+**同步子模块并自动提交推送：**
+```sh
+pnpm sync:commit
+```
+
+**仅同步子模块（不自动提交）：**
+```sh
+pnpm sync:submodule
+```
+
+### 使用 Husky 自动同步（可选）
+
+如果想在每次推送前自动同步子模块：
+
+1. 安装 husky：
+```sh
+pnpm add -D husky
+pnpm exec husky install
+```
+
+2. 创建 pre-push 钩子：
+```sh
+pnpm exec husky add .husky/pre-push "pnpm sync:submodule"
+```
+
+或者直接使用已创建的 `.husky/pre-push` 文件。
+
+详细说明请查看 [`scripts/README.md`](./scripts/README.md)

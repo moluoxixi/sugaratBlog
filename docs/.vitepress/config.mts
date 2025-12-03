@@ -55,7 +55,7 @@ const hiddenFiles = findHiddenFiles(docsDir)
 export default defineConfig({
   // 继承博客主题(@sugarat/theme)
   extends: blogTheme,
-  // base,
+  base: '/',
   lang: 'zh-cn',
   title: 'moluoxixi Blog',
   description: 'moluoxixi 的博客，基于 vitepress 实现',

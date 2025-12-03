@@ -7,7 +7,10 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
-    "serve": "vitepress serve docs"
+    "serve": "vitepress serve docs",
+    "sync:submodule": "tsx scripts/sync-submodule.ts",
+    "sync:commit": "tsx scripts/sync-and-publish.ts",
+    "sync:publish": "tsx scripts/sync-and-publish.ts"
   },
   "dependencies": {
     "@element-plus/icons-vue": "catalog:build",
@@ -21,6 +24,7 @@
   "devDependencies": {
     "pagefind": "catalog:build",
     "sass": "catalog:build",
+    "tsx": "^4.7.0",
     "typescript": "catalog:type",
     "vitepress": "catalog:build"
   },
