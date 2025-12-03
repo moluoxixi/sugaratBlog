@@ -51,48 +51,37 @@ const blogTheme = getThemeConfig({
   // 友链
   friend: [
     {
-      nickname: 'Vitepress',
-      des: 'Vite & Vue Powered Static Site Generator',
-      avatar:
-        'https://vitepress.dev/vitepress-logo-large.webp',
-      url: 'https://vitepress.dev/',
+      nickname: '旧博客',
+      des: '不依赖任何主题的老博客，首个博客，有很多问题，暂无时间优化',
+      avatar: 'https://moluoxixi.github.io/blog/vitepress/avator1.png',
+      url: 'https://moluoxixi.github.io/blog/vitepress/',
     },
   ],
 
   // 公告
-  // popover: {
-  //   title: '公告',
-  //   body: [
-  //     { type: 'text', content: '👇公众号👇---👇 微信 👇' },
-  //     {
-  //       type: 'image',
-  //       src: 'https://img.cdn.sugarat.top/mdImg/MTYxNTAxODc2NTIxMA==615018765210~fmt.webp'
-  //     },
-  //     {
-  //       type: 'text',
-  //       content: '欢迎大家加群&私信交流'
-  //     },
-  //     {
-  //       type: 'text',
-  //       content: '文章首/文尾有群二维码',
-  //       style: 'padding-top:0'
-  //     },
-  //     {
-  //       type: 'button',
-  //       content: '作者博客',
-  //       link: 'https://sugarat.top'
-  //     },
-  //     {
-  //       type: 'button',
-  //       content: '加群交流',
-  //       props: {
-  //         type: 'success'
-  //       },
-  //       link: 'https://theme.sugarat.top/group.html',
-  //     }
-  //   ],
-  //   duration: 0
-  // },
+  popover: {
+    title: '公告',
+    // body: [
+    //   { type: 'text', content: '👇公众号👇---👇 微信 👇' },
+    //   {
+    //     type: 'image',
+    //     src: 'https://img.cdn.sugarat.top/mdImg/MTYxNTAxODc2NTIxMA==615018765210~fmt.webp'
+    //   },
+    //   {
+    //     type: 'text',
+    //     content: '欢迎大家加群&私信交流'
+    //   },
+    //   {
+    //     type: 'button',
+    //     content: '加群交流',
+    //     props: {
+    //       type: 'success'
+    //     },
+    //     link: 'https://theme.sugarat.top/group.html',
+    //   }
+    // ],
+    // duration: 0
+  },
 })
 
 export { blogTheme }
